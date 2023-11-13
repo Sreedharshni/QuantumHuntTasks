@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Login</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">Social Login</h1>
+    <div class="d-flex justify-content-center mt-4">
+       
+        <a href="#" class="btn btn-danger btn-lg mx-2" onclick="loginWithGmail()">Login with Gmail</a>
+        
+        <a href="#" class="btn btn-primary btn-lg mx-2" onclick="loginWithFacebook()">Login with Facebook</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    function loginWithGmail() {
+        // Replace <YOUR_CLIENT_ID> with your Gmail API client ID
+        const clientId = '189096720675-626h8r1sv59qi7fpi0t148hkknu86p3c.apps.googleusercontent.com';
+        const redirectUri = 'YOUR_REDIRECT_URI'; // Replace with your redirect URI
+
+        // Open Gmail authentication window
+        window.location.href = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=https://www.googleapis.com/auth/userinfo.email`;
+    }
+
+    // Function to initiate Facebook login
+    function loginWithFacebook() {
+        // Replace <YOUR_FACEBOOK_APP_ID> with your Facebook App ID
+        const appId = '<YOUR_FACEBOOK_APP_ID>';
+        const redirectUri = 'YOUR_REDIRECT_URI'; // Replace with your redirect URI
+
+        // Open Facebook authentication window
+        window.location.href = `https://www.facebook.com/v11.0/dialog/oauth?client_id=${appId}&redirect_uri=${redirectUri}&response_type=token&scope=email`;
+    }
+</script>
+
+</body>
+</html>
